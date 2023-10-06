@@ -22,9 +22,17 @@ print("*        【 Product Name : Scs SII Decrypt 】   *")
 print("*        【 Author: MQuel 】                    *")
 print("*        【 Github: github@murselsen 】         *")
 print("*        【 Discord: 35mursel 】                *")
-print("*        【 Version: v2.1 】                    *")
+print("*        【 Version: v2.2 】                    *")
 print("*        【 License: 2023 - 2030 】             *")
 print("*************************************************")
+print("*                                              *")
+print("*      --gameName:                             *")
+print("*                                              *")
+print("*      ets : Euro Truck Simulator 2            *")
+print("*      ats : American Truck Simulator          *")
+print("*                                              *")
+print("*************************************************")
+
 
 profileTable = {'ID': [], 'Profile': [], 'Path': []}
 gameList = {"ets": "Euro Truck Simulator 2", "ats": "American Truck Simulator"}
@@ -49,8 +57,11 @@ def main():
 
     for index, game in enumerate(gameList):
         print("🎮|App :", gameList.get(game))
+    if sys.argv[1] == 'ets' or sys.argv[1] == 'ats':
+        _selectGame = sys.argv[1]
+    else:
+        _selectGame = input("Select the SCS game you want to Decrypt => (ets/ats) : ")
 
-    _selectGame = input("Select the SCS game you want to Decrypt => (ets/ats) : ")
     if _selectGame == '' or _selectGame == ' ':
         print(
             " Error Input : ", _selectGame
@@ -109,7 +120,7 @@ def main():
 
                             if line.startswith(" cached_discovery["):
                                 del lines[line_index]
-                            elif  line.startswith(" cached_stats["):
+                            elif line.startswith(" cached_stats["):
                                 del lines[line_index]
                             else:
                                 if line.startswith(" cached_discovery:"):
@@ -121,15 +132,13 @@ def main():
                                 newLines.append(line)
                     # print(newLines)
                     print("Profile SII Writing...")
-                    with open("profile.sii","w") as profileDetailWriting:
+                    with open("profile.sii", "w") as profileDetailWriting:
                         profileDetailWriting.writelines(newLines)
-
 
                     print(
                         "Cached Stats AND Discovery truncated !"
                     )
 
-                    breakpoint()
                     _activeProfileSavePath = os.path.join(_activeProfilePath, "save")
                     _activeProfileSavePathExists = os.path.exists(_activeProfileSavePath)
                     if _activeProfileSavePathExists:
