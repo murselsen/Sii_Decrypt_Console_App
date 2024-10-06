@@ -14,7 +14,9 @@ SHGFP_TYPE_CURRENT = 0  # Get current, not default value
 global result, appMainPath, buf, myDocuments, gameList, SII_exe, active_profile, active_save, profileTable, saveTable
 
 buf = ctypes.create_unicode_buffer(ctypes.wintypes.MAX_PATH)
-ctypes.windll.shell32.SHGetFolderPathW(None, CSIDL_PERSONAL, None, SHGFP_TYPE_CURRENT, buf)
+ctypes.windll.shell32.SHGetFolderPathW(
+    None, CSIDL_PERSONAL, None, SHGFP_TYPE_CURRENT, buf
+)
 myDocumentsPath = buf.value
 print("*************************************************")
 print("*        【 Company: The King'S Works 】        *")
@@ -34,7 +36,7 @@ print("*                                              *")
 print("*************************************************")
 
 
-profileTable = {'ID': [], 'Profile': [], 'Path': []}
+profileTable = {"ID": [], "Profile": [], "Path": []}
 gameList = {"ets": "Euro Truck Simulator 2", "ats": "American Truck Simulator"}
 SII_exe = os.path.join(os.getcwd(), "SII.exe")
 
@@ -51,22 +53,32 @@ def main():
         labelLength = len(label)
         cwd = os.getcwd() + " |"
         cwdLength = len(cwd)
-        print("\n+", "-".center(labelLength - 1, "-"), "+", "-".center(cwdLength - 2, "-"), "+")
+        print(
+            "\n+",
+            "-".center(labelLength - 1, "-"),
+            "+",
+            "-".center(cwdLength - 2, "-"),
+            "+",
+        )
         print("|", label, cwd)
-        print("+", "-".center(labelLength - 1, "-"), "+", "-".center(cwdLength - 2, "-"), "+\n")
+        print(
+            "+",
+            "-".center(labelLength - 1, "-"),
+            "+",
+            "-".center(cwdLength - 2, "-"),
+            "+\n",
+        )
 
     for index, game in enumerate(gameList):
         print("🎮|App :", gameList.get(game))
-    if sys.argv[1] == 'ets' or sys.argv[1] == 'ats':
+    if sys.argv[1] == "ets" or sys.argv[1] == "ats":
         _selectGame = sys.argv[1]
     else:
         _selectGame = input("Select the SCS game you want to Decrypt => (ets/ats) : ")
 
-    if _selectGame == '' or _selectGame == ' ':
-        print(
-            " Error Input : ", _selectGame
-        )
-        os.system('cls')
+    if _selectGame == "" or _selectGame == " ":
+        print(" Error Input : ", _selectGame)
+        os.system("cls")
         os.execl(sys.executable, "start " + os.path.abspath(__file__))
     else:
         # print("Input : ", _selectGame)
@@ -96,17 +108,28 @@ def main():
                 print("------------------")
                 for profileDir_index, profileDir in enumerate(os.listdir(os.getcwd())):
                     print(
-                        "---------------------------------------------------------------------------------------------")
-                    print("[", profileDir_index, "] | Active Profile\n"
-                                                 "[", profileDir_index, "] | -> Name :", profileDir)
+                        "---------------------------------------------------------------------------------------------"
+                    )
+                    print(
+                        "[",
+                        profileDir_index,
+                        "] | Active Profile\n" "[",
+                        profileDir_index,
+                        "] | -> Name :",
+                        profileDir,
+                    )
                     _activeProfilePath = os.path.join(os.getcwd(), profileDir)
                     _activeProfilePathExists = os.path.exists(_activeProfilePath)
                     os.chdir(_activeProfilePath)
                     shutil.copyfile(SII_exe, os.getcwd() + "/SII.exe")
 
-                    _activeProfileInfoFilePath = os.path.join(_activeProfilePath, "profile.sii")
+                    _activeProfileInfoFilePath = os.path.join(
+                        _activeProfilePath, "profile.sii"
+                    )
 
-                    _activeProfileInfoFilePathExists = os.path.exists(_activeProfileInfoFilePath)
+                    _activeProfileInfoFilePathExists = os.path.exists(
+                        _activeProfileInfoFilePath
+                    )
                     cmd = "SII.exe profile.sii"
                     os.system(cmd)
                     # time.sleep(1.0)
@@ -135,29 +158,46 @@ def main():
                     with open("profile.sii", "w") as profileDetailWriting:
                         profileDetailWriting.writelines(newLines)
 
-                    print(
-                        "Cached Stats AND Discovery truncated !"
-                    )
+                    print("Cached Stats AND Discovery truncated !")
 
                     _activeProfileSavePath = os.path.join(_activeProfilePath, "save")
-                    _activeProfileSavePathExists = os.path.exists(_activeProfileSavePath)
+                    _activeProfileSavePathExists = os.path.exists(
+                        _activeProfileSavePath
+                    )
                     if _activeProfileSavePathExists:
                         os.chdir(_activeProfileSavePath)
                         print("[", profileDir_index, "] Active Profile Save Dir")
                         for saves_index, saves in enumerate(os.listdir(os.getcwd())):
 
-                            print("[", profileDir_index, "] | [", saves_index, "] -> Name :", saves)
-                            _activeProfileSaveDirItemPath = os.path.join(os.getcwd(), saves)
-                            _activeProfileSaveDirItemPathExists = os.path.exists(_activeProfileSaveDirItemPath)
+                            print(
+                                "[",
+                                profileDir_index,
+                                "] | [",
+                                saves_index,
+                                "] -> Name :",
+                                saves,
+                            )
+                            _activeProfileSaveDirItemPath = os.path.join(
+                                os.getcwd(), saves
+                            )
+                            _activeProfileSaveDirItemPathExists = os.path.exists(
+                                _activeProfileSaveDirItemPath
+                            )
                             os.chdir(_activeProfileSaveDirItemPath)
-                            for saveFile_index, saveFile in enumerate(os.listdir(os.getcwd())):
+                            for saveFile_index, saveFile in enumerate(
+                                os.listdir(os.getcwd())
+                            ):
                                 shutil.copyfile(SII_exe, os.getcwd() + "/SII.exe")
                                 if saveFile == "game.sii":
-                                    print("\n🔔 | Status: Game.sii files will be decrypted. Please Wait!")
+                                    print(
+                                        "\n🔔 | Status: Game.sii files will be decrypted. Please Wait!"
+                                    )
                                     os.system("SII.exe game.sii")
                                     time.sleep(3.0)
                                 elif saveFile == "info.sii":
-                                    print("\n🔔 | Status: Info.sii files will be decrypted. Please Wait!")
+                                    print(
+                                        "\n🔔 | Status: Info.sii files will be decrypted. Please Wait!"
+                                    )
                                     os.system("SII.exe info.sii")
                                     time.sleep(1.0)
                                 else:
@@ -168,7 +208,8 @@ def main():
                     else:
                         continue
 
-                    os.chdir(_selectGameProfilesPath)  # Select Game Profiles Dir Path
+                    # Select Game Profiles Dir Path
+                    os.chdir(_selectGameProfilesPath)
                     logging.info("\n Status : Completed")
             else:
                 os.system("exit")

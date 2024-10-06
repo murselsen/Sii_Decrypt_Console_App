@@ -1,0 +1,200 @@
+[
+    {
+        "label": "ctypes.wintypes",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "ctypes.wintypes",
+        "description": "ctypes.wintypes",
+        "detail": "ctypes.wintypes",
+        "documentation": {}
+    },
+    {
+        "label": "logging",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "logging",
+        "description": "logging",
+        "detail": "logging",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "shutil",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "shutil",
+        "description": "shutil",
+        "detail": "shutil",
+        "documentation": {}
+    },
+    {
+        "label": "sys",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "sys",
+        "description": "sys",
+        "detail": "sys",
+        "documentation": {}
+    },
+    {
+        "label": "time",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "time",
+        "description": "time",
+        "detail": "time",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "def main():\n    def cwd():\n        label = \"📂 | Where I am:  |\"\n        labelLength = len(label)\n        cwd = os.getcwd() + \" |\"\n        cwdLength = len(cwd)\n        print(\n            \"\\n+\",\n            \"-\".center(labelLength - 1, \"-\"),\n            \"+\",",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "CSIDL_PERSONAL",
+        "kind": 5,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "CSIDL_PERSONAL = 5  # My Documents\nSHGFP_TYPE_CURRENT = 0  # Get current, not default value\nglobal result, appMainPath, buf, myDocuments, gameList, SII_exe, active_profile, active_save, profileTable, saveTable\nbuf = ctypes.create_unicode_buffer(ctypes.wintypes.MAX_PATH)\nctypes.windll.shell32.SHGetFolderPathW(\n    None, CSIDL_PERSONAL, None, SHGFP_TYPE_CURRENT, buf\n)\nmyDocumentsPath = buf.value\nprint(\"*************************************************\")\nprint(\"*        【 Company: The King'S Works 】        *\")",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "SHGFP_TYPE_CURRENT",
+        "kind": 5,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "SHGFP_TYPE_CURRENT = 0  # Get current, not default value\nglobal result, appMainPath, buf, myDocuments, gameList, SII_exe, active_profile, active_save, profileTable, saveTable\nbuf = ctypes.create_unicode_buffer(ctypes.wintypes.MAX_PATH)\nctypes.windll.shell32.SHGetFolderPathW(\n    None, CSIDL_PERSONAL, None, SHGFP_TYPE_CURRENT, buf\n)\nmyDocumentsPath = buf.value\nprint(\"*************************************************\")\nprint(\"*        【 Company: The King'S Works 】        *\")\nprint(\"*        【 Product Name : Scs SII Decrypt 】   *\")",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "buf",
+        "kind": 5,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "buf = ctypes.create_unicode_buffer(ctypes.wintypes.MAX_PATH)\nctypes.windll.shell32.SHGetFolderPathW(\n    None, CSIDL_PERSONAL, None, SHGFP_TYPE_CURRENT, buf\n)\nmyDocumentsPath = buf.value\nprint(\"*************************************************\")\nprint(\"*        【 Company: The King'S Works 】        *\")\nprint(\"*        【 Product Name : Scs SII Decrypt 】   *\")\nprint(\"*        【 Author: MQuel 】                    *\")\nprint(\"*        【 Github: github@murselsen 】         *\")",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "myDocumentsPath",
+        "kind": 5,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "myDocumentsPath = buf.value\nprint(\"*************************************************\")\nprint(\"*        【 Company: The King'S Works 】        *\")\nprint(\"*        【 Product Name : Scs SII Decrypt 】   *\")\nprint(\"*        【 Author: MQuel 】                    *\")\nprint(\"*        【 Github: github@murselsen 】         *\")\nprint(\"*        【 Discord: 35mursel 】                *\")\nprint(\"*        【 Version: v3 】                      *\")\nprint(\"*        【 License: 2023 - 2030 】             *\")\nprint(\"*************************************************\")",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "profileTable",
+        "kind": 5,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "profileTable = {\"ID\": [], \"Profile\": [], \"Path\": []}\ngameList = {\"ets\": \"Euro Truck Simulator 2\", \"ats\": \"American Truck Simulator\"}\nSII_exe = os.path.join(os.getcwd(), \"SII.exe\")\ndef main():\n    def cwd():\n        label = \"📂 | Where I am:  |\"\n        labelLength = len(label)\n        cwd = os.getcwd() + \" |\"\n        cwdLength = len(cwd)\n        print(",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "gameList",
+        "kind": 5,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "gameList = {\"ets\": \"Euro Truck Simulator 2\", \"ats\": \"American Truck Simulator\"}\nSII_exe = os.path.join(os.getcwd(), \"SII.exe\")\ndef main():\n    def cwd():\n        label = \"📂 | Where I am:  |\"\n        labelLength = len(label)\n        cwd = os.getcwd() + \" |\"\n        cwdLength = len(cwd)\n        print(\n            \"\\n+\",",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "SII_exe",
+        "kind": 5,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "SII_exe = os.path.join(os.getcwd(), \"SII.exe\")\ndef main():\n    def cwd():\n        label = \"📂 | Where I am:  |\"\n        labelLength = len(label)\n        cwd = os.getcwd() + \" |\"\n        cwdLength = len(cwd)\n        print(\n            \"\\n+\",\n            \"-\".center(labelLength - 1, \"-\"),",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "script",
+        "description": "script",
+        "peekOfCode": "def main():\n    def exit(status):\n        if status:\n            input(\"🚪 | Press any key to exit :\")\n        else:\n            return True\n    def cwd():\n        label = \"📂 | Where I am:  |\"\n        labelLength = len(label)\n        cwd = os.getcwd() + \" |\"",
+        "detail": "script",
+        "documentation": {}
+    },
+    {
+        "label": "CSIDL_PERSONAL",
+        "kind": 5,
+        "importPath": "script",
+        "description": "script",
+        "peekOfCode": "CSIDL_PERSONAL = 5  # My Documents\nSHGFP_TYPE_CURRENT = 0  # Get current, not default value\nglobal result, appMainPath, buf, myDocuments, gameList, SII_exe, active_profile, active_save, profileTable, saveTable\nbuf = ctypes.create_unicode_buffer(ctypes.wintypes.MAX_PATH)\nctypes.windll.shell32.SHGetFolderPathW(\n    None, CSIDL_PERSONAL, None, SHGFP_TYPE_CURRENT, buf\n)\nmyDocumentsPath = buf.value\nprint(\"*************************************************\")\nprint(\"*        【 Company: The King'S Works 】        *\")",
+        "detail": "script",
+        "documentation": {}
+    },
+    {
+        "label": "SHGFP_TYPE_CURRENT",
+        "kind": 5,
+        "importPath": "script",
+        "description": "script",
+        "peekOfCode": "SHGFP_TYPE_CURRENT = 0  # Get current, not default value\nglobal result, appMainPath, buf, myDocuments, gameList, SII_exe, active_profile, active_save, profileTable, saveTable\nbuf = ctypes.create_unicode_buffer(ctypes.wintypes.MAX_PATH)\nctypes.windll.shell32.SHGetFolderPathW(\n    None, CSIDL_PERSONAL, None, SHGFP_TYPE_CURRENT, buf\n)\nmyDocumentsPath = buf.value\nprint(\"*************************************************\")\nprint(\"*        【 Company: The King'S Works 】        *\")\nprint(\"*        【 Product Name : Scs SII Decrypt 】   *\")",
+        "detail": "script",
+        "documentation": {}
+    },
+    {
+        "label": "buf",
+        "kind": 5,
+        "importPath": "script",
+        "description": "script",
+        "peekOfCode": "buf = ctypes.create_unicode_buffer(ctypes.wintypes.MAX_PATH)\nctypes.windll.shell32.SHGetFolderPathW(\n    None, CSIDL_PERSONAL, None, SHGFP_TYPE_CURRENT, buf\n)\nmyDocumentsPath = buf.value\nprint(\"*************************************************\")\nprint(\"*        【 Company: The King'S Works 】        *\")\nprint(\"*        【 Product Name : Scs SII Decrypt 】   *\")\nprint(\"*        【 Author: MQuel 】                    *\")\nprint(\"*        【 Github: github@murselsen 】         *\")",
+        "detail": "script",
+        "documentation": {}
+    },
+    {
+        "label": "myDocumentsPath",
+        "kind": 5,
+        "importPath": "script",
+        "description": "script",
+        "peekOfCode": "myDocumentsPath = buf.value\nprint(\"*************************************************\")\nprint(\"*        【 Company: The King'S Works 】        *\")\nprint(\"*        【 Product Name : Scs SII Decrypt 】   *\")\nprint(\"*        【 Author: MQuel 】                    *\")\nprint(\"*        【 Github: github@murselsen 】         *\")\nprint(\"*        【 Discord: 35mursel 】                *\")\nprint(\"*        【 Version: v2.2 】                    *\")\nprint(\"*        【 License: 2023 - 2030 】             *\")\nprint(\"*************************************************\")",
+        "detail": "script",
+        "documentation": {}
+    },
+    {
+        "label": "profileTable",
+        "kind": 5,
+        "importPath": "script",
+        "description": "script",
+        "peekOfCode": "profileTable = {\"ID\": [], \"Profile\": [], \"Path\": []}\ngameList = {\"ets\": \"Euro Truck Simulator 2\", \"ats\": \"American Truck Simulator\"}\nSII_exe = os.path.join(os.getcwd(), \"SII.exe\")\ndef main():\n    def exit(status):\n        if status:\n            input(\"🚪 | Press any key to exit :\")\n        else:\n            return True\n    def cwd():",
+        "detail": "script",
+        "documentation": {}
+    },
+    {
+        "label": "gameList",
+        "kind": 5,
+        "importPath": "script",
+        "description": "script",
+        "peekOfCode": "gameList = {\"ets\": \"Euro Truck Simulator 2\", \"ats\": \"American Truck Simulator\"}\nSII_exe = os.path.join(os.getcwd(), \"SII.exe\")\ndef main():\n    def exit(status):\n        if status:\n            input(\"🚪 | Press any key to exit :\")\n        else:\n            return True\n    def cwd():\n        label = \"📂 | Where I am:  |\"",
+        "detail": "script",
+        "documentation": {}
+    },
+    {
+        "label": "SII_exe",
+        "kind": 5,
+        "importPath": "script",
+        "description": "script",
+        "peekOfCode": "SII_exe = os.path.join(os.getcwd(), \"SII.exe\")\ndef main():\n    def exit(status):\n        if status:\n            input(\"🚪 | Press any key to exit :\")\n        else:\n            return True\n    def cwd():\n        label = \"📂 | Where I am:  |\"\n        labelLength = len(label)",
+        "detail": "script",
+        "documentation": {}
+    }
+]
