@@ -1,7 +1,7 @@
 # Sii_Decrypt_Console_App
 <table>
   <tr>
-    <th>Coding Time :</th> <td><a href="https://wakatime.com/badge/user/602e419d-f1c9-4979-ac85-a3da5d93f7e7/project/156d09bc-5e53-40ed-b318-5ce637c19060"><img src="https://wakatime.com/badge/user/602e419d-f1c9-4979-ac85-a3da5d93f7e7/project/156d09bc-5e53-40ed-b318-5ce637c19060.svg" alt="wakatime"></a> </td>
+    <th>Coding Time :</th> <td style="padding-top:10px;"><a href="https://wakatime.com/badge/user/602e419d-f1c9-4979-ac85-a3da5d93f7e7/project/156d09bc-5e53-40ed-b318-5ce637c19060"><img src="https://wakatime.com/badge/user/602e419d-f1c9-4979-ac85-a3da5d93f7e7/project/156d09bc-5e53-40ed-b318-5ce637c19060.svg" alt="wakatime"></a> </td>
   </tr>
 </table>
 <hr/>
